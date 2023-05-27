@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form class="" action="index.html" method="POST">
+  {{form.hidden_tag()}}
+  {{form.email.label}}{{form.email}} <br>
+  {{form.username.label}}{{form.username}} <br>
+  {{form.password.label}}{{form.password}} <br>
+  {{form.confirm_password.label}}{{form.confirm_password}} <br>
+  {{form.submit()}}
+
+</form>
+
+{% endblock %}

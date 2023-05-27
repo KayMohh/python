@@ -5,9 +5,15 @@
   <h1>Login</h1>
 </div>
 <div class="form">
-  <form class="" action="index.html" method="post">
+  <form class="" action="index.html" method="POST">
+    {{form.hidden_tag()}}
+    {{form.email.label}}{{form.email}} <br>
+    {{form.username.label}}{{form.username}} <br>
+    {{form.password.label}}{{form.password}} <br>
+    {{form.submit()}}
 
   </form>
+
 </div>
 
 
