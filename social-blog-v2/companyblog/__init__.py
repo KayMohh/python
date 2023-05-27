@@ -1,5 +1,5 @@
 ## company blog / init.py
-
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -31,7 +31,7 @@ app.register_blueprint(error_pages)
 app.register_blueprint(users)
 
 db = SQLAlchemy(app)
-Migrate(app.db)
+Migrate(app,db)
 
 
 

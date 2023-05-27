@@ -16,7 +16,7 @@ users = Blueprint('users', __name__)
 def register():
     form = RegistrationForm()
 
-    if form validate_on_submit():
+    if form.validate_on_submit():
         user = User(email=form.email.data, username=form.username.data, password = form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -36,7 +36,7 @@ def logout():
 @users.route('/login', methods = ['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form validate_on_submit():
+    if form.validate_on_submit():
 
         user = User.query.filter_by(email=form.email.data).first()
 
