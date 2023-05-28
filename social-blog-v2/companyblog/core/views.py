@@ -15,6 +15,3 @@ def index():
 def info():
 
     return render_template('info.html')
-@core.route('/login')
-def login():
-    return render_template('login.html')

@@ -54,3 +54,37 @@ def login():
             return redirect(next)
 
     return render_template('login.html', form=form)
+
+@users.route('/account', methods= ['GET', 'POST'])
+@login_required
+def account():
+
+    form = UpdateUserForm()
+    if form.validate_on_submit():
+
+        if form.picture.data:
+            username = current_data.username
+            pic = add_profile_pic(form.picture.data, username)
+            current_user.profile_image = pic
+
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('User Account Created')
+        return redirect(url_for('users.account'))
+
+    elif request.method == "GET":
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+
+    profile_image = url_for('static', filename='profile_pics/'+current_user.profile_image)
+    return render_template('account.html', profile_image=profile_image, form=form)
+
+
+
+@users.route('/<username>')
+def user_posts(username):
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+    blog_posts = Blogpost.query.filter_by(author=user).order_by(Blogpost.date.desc()).paginate(page=page. per_page=5)
+    return render_template('user_blog_posts.html', blog_posts=blog_posts, user=user)

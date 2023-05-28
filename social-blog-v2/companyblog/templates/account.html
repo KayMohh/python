@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <div align='center' class="">
+    <h1>Welcome to {{ current_user.username }} Page </h1>
+    <img src="{{ url_for('static', filename='profile_pics'+current_user.profile_image) }}" alt="">
+
+  </div>
+
+</div>
+
+<div class="container">
+  <form class="" action="index.html" method="POST">
+  <div class="form-group">
+
+    {{form.hidden_tag}}
+  </div>
+    <div class="form-group">
+
+    {{form.username.label(class='form.group')}}{{form.username(class='form-control}}
+  </div>
+    <div class="form-group">
+
+    {{form.email.label(class='form.group')}}{{form.email(class='form-control}}
+  </div>
+    <div class="form-group">
+
+    {{form.picture.label(class='form.group')}}{{form.picture}(class='form-control}
+  </div>
+    <div class="form-group">
+
+    {{form.submit(class='btn-primary')}}
+  </div>
+
+
+  </form>
+</div>
+
+{% endblock %}
