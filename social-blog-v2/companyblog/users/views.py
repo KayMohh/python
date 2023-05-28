@@ -3,7 +3,7 @@
 
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
-from companyblog import db
+# from companyblog import .
 from companyblog.models import User, Blogpost
 from companyblog.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 from companyblog.users.picture_handler import add_profile_pic

@@ -1,8 +1,10 @@
 #models py file
-from companyblog import db, login_manager
+
+##changed from company blog to *
+from  companyblog import login_manager,db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from datetime import DateTime
+from datetime import datetime
 
 
 @login_manager.user_loader
@@ -33,7 +35,7 @@ class User(db.Model, UserMixin):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        retuen f"Username:  {self.username}"
+        return f"Username:  {self.username}"
 
 class Blogpost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
