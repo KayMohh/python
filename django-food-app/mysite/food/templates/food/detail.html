@@ -15,4 +15,8 @@
 <h2>{{ item.item_desc }} </h2>
 <h3>${{ item.item_price }} </h3>
 
+<div class="col-md-3">
+     <a class="btn btn-lg btn-dark" href="{% url 'food:delete_item' item.id %}">Delete</a>
+</div>
+
 {% endblock %}
