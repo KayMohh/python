@@ -27,8 +27,13 @@
                <a href="#" class="navbar-brand">FoodApp</a>
                <div class="navbar">
                     <a href="{% url 'food:create_item' %}" class="nav-item">Add Item</a>
-                    <a href="#" class="nav-item">Items</a>
-                    <a href="#" class="nav-item">A</a>
+                    <a href="#" class="nav-item">Delete Items</a>
+                    {% if user.is_authenticated%}
+                    <a href="{% url 'logout' %}">Log Out</a>
+                    <a href="{% url 'profile' %}">Profile</a>
+                    {% else %}
+                    <a href="{% url 'login' %}">Log In</a>
+                    {% endif %}
           
                </div>
           </nav>
