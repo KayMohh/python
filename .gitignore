@@ -1,0 +1,3 @@
+# .gitignore # Project files and directories /myproject/local_settings.py /myproject/static/ /myproject/tmp/ /myproject/media/ # Byte-compiled / optimized / DLL files __pycache__/ *.py[cod] *$py.class # C extensions *.so # PyInstaller *.manifest *.spec # Installer logs pip-log.txt pip-delete-this-directory.txt # Unit test ...
+
+
