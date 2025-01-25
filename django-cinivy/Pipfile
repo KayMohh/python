@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "==2.1"
+django-tastypie = "*"
 
 [dev-packages]
 
