@@ -14,7 +14,9 @@
                 {% for movie in movies %}
                 
                 <tr>
-                    <td>{{ movie.title }}</td>
+                    <td>
+                    <a href="/movies/{{ movie.id}}"> {{ movie.title }}    </a>
+                    </td>
                     <td>{{ movie.genre }}</td>
                     <td>{{ movie.number_in_stock }}</td>
                     <td>{{ movie.daily_rate }}</td>
